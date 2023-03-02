@@ -1,0 +1,19 @@
+h3 {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+table{
+    table-layout: fixed;
+}
+iframe{
+    width:100%;
+
+}
+td{
+    vertical-align: top;
+}
+

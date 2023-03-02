@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" type="text/css" th:href="@{assets/css/common.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{assets/css/header.css}">
+</head>
+<body>
+<header th:replace="header/header.html"></header>
+
+<table>
+
+  <tr>
+
+    <td>
+
+      <form action="createTag">
+        <label for="name">Tag Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        Tag Type:<br>
+
+        <input type="radio" id="host" name="type" value="1">
+        <label for="host">Host</label><br>
+
+
+        <input type="radio" id="guest" name="type" value="2">
+        <label for="guest">Guest</label><br>
+
+
+        <input type="radio" id="subject" name="type" value="3">
+        <label for="subject">Subject</label><br>
+
+
+        <input type="radio" id="series" name="type" value="4">
+        <label for="series">Series</label><br>
+
+        <br>
+        <input type="submit" value="Submit">
+
+      </form>
+
+    </td>
+
+
+  </tr>
+
+
+
+</table>
+
+</body>
+</html>

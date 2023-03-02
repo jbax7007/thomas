@@ -1,0 +1,28 @@
+body {
+    background: url("../images/background.jpg");
+    height: 48px; /* The least supported option. */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Copperplate, "Copperplate Gothic Bold", serif;
+    color: #dddddd;
+    margin: 0
+}
+
+a {
+    color: #dddddd;
+}
+
+.mainbody {
+    padding-top: 80px;
+}
+
+table {
+    border: 1px solid black;
+    padding: 14px 16px;
+    width: 80%;
+    background-color: #131418;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}

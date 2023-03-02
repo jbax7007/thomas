@@ -1,0 +1,29 @@
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+tr{
+
+}
+
+td{
+    border-bottom: 1pt solid #ffffff;
+}
+
+h1{
+
+}
+
+strong{
+
+    color : #999999;
+    font-family: 'Courier New', monospace;
+
+}
+
+br{
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 10px; /* change this to whatever height you want it */
+}

@@ -1,0 +1,18 @@
+server:
+  port : 5000
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:thomas.db
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mvc:
+    format:
+      date: MM-dd-yyyy
+  thymeleaf:
+    cache: false

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/header.css}">
+
+</head>
+<body>
+
+<!-- Header Area Start -->
+<header th:replace="header/header.html"></header>
+<!-- Header Area End -->
+
+
+<table>
+
+  <tr>
+
+    <td>
+
+      <form action="createVideo">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" size = "100" maxlength="100"><br>
+
+        <label for="description">Description:</label><br>
+        <input type="text" id="description" name="description" size = "255" maxlength="255"><br>
+
+        <label for="link">Link:</label><br>
+        <input type="text" id="link" name="link" size = "400" maxlength="400"><br>
+
+        <label for="embedded">Embedded Link:</label><br>
+        <input type="text" id="embedded" name="embedded" size = "400" maxlength="400"><br>
+
+        <label for="date">Date(YYYY/MM/DD)Include 0s</label><br>
+        <input type="text" id="date" name="date"><br>
+
+
+        <strong> Host Tags</strong>
+        <div th:each="host : ${allHosts}">
+          <input type = "checkbox" name = "tags" th:text="${host['tagName']} " th:value="${host['tagID']}" >
+        </div>
+        <hr>
+        <strong> Guest Tags</strong>
+        <div th:each="guest : ${allGuests}">
+          <input type = "checkbox" name = "tags" th:text="${guest['tagName']}" th:value="${guest['tagID']}">
+        </div>
+        <hr>
+        <strong> Subject Tags</strong>
+        <div th:each="subject : ${allSubjects}">
+          <input type = "checkbox" name = "tags" th:text="${subject['tagName']}" th:value="${subject['tagID']}">
+        </div>
+        <hr>
+        <strong> Series Tags</strong>
+        <div th:each="series : ${allSeries}">
+          <input type = "checkbox"  name = "tags" th:text="${series['tagName']}" th:value="${series['tagID']}">
+        </div>
+
+
+        <input type="submit" value="Submit">
+
+      </form>
+
+    </td>
+
+
+  </tr>
+
+
+
+</table>
+
+
+
+
+</body>
+</html>

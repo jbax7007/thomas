@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Thomas777</title>
+
+    <script type="text/javascript" th:src="@{assets/js/content.js}"></script>
+
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/content.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/header.css}">
+</head>
+
+<body>
+<!-- Header Area Start -->
+  <header th:replace="header/header.html"></header>
+<!-- Header Area End -->
+
+  <div class = "mainbody">
+
+      <table>
+          <colgroup>
+              <col span="1" style="width: 20%;">
+              <col span="1" style="width: 80%;">
+          </colgroup>
+
+          <tr>
+              <td>
+              </td>
+              <td>
+                  *NOT ALL FREELY AVAILABLE CONTENT IS LINKED HERE. PAID CONTENT HOSTED BY THOMAS IS AVAILABLE ON SUBSTACK*
+              </td>
+          </tr>
+
+          <tr>
+              <td rowspan="0" style = "height : 76vh">
+                  <a href="/content">All Videos</a>
+                  <hr>
+                  <strong> Hosts</strong>
+                  <div th:each="host : ${allHosts}">
+                      <a th:text="${host['tagName']} " th:href="@{'/content?tag=' + ${host['tagID'] + '&page=0'}}"></a>
+                  </div>
+                  <hr>
+                  <strong> Guests</strong>
+                  <div th:each="guest : ${allGuests}">
+                      <a th:text="${guest['tagName']}" th:href="@{'/content?tag=' + ${guest['tagID']+ '&page=0'}}"></a>
+                  </div>
+                  <hr>
+                  <strong> Subjects</strong>
+                  <div th:each="subject : ${allSubjects}">
+                      <a th:text="${subject['tagName']}" th:href="@{'/content?tag=' + ${subject['tagID']+ '&page=0'}}"></a>
+                  </div>
+                  <hr>
+                  <strong> Series</strong>
+                  <div th:each="series : ${allSeries}">
+                      <a th:text="${series['tagName']}" th:href="@{'/content?tag=' + ${series['tagID']+ '&page=0'}}"></a>
+                  </div>
+              </td>
+              <td th:text="@{${message}}">
+              </td>
+          </tr>
+
+          <tr th:each="video : ${allVideos}">
+              <td>
+                  <button type="button" class="collapsible" th:text="${video['videoTitle']}"></button>
+                  <div class="content">[(${video.videoEmbeddedLink})]</div>
+              </td>
+          </tr>
+
+          <tr>
+              <td style = "height : auto; vertical-align:bottom; text-align: center;">
+                  <table style="width: 10%; padding: 0 0;">
+                      <tr>
+                          <td th:each="page : ${pages}">
+                              <a th:text="${page}" th:href="@{'/content?tag=' + ${tag}+ '&page=' + ${page -1}}"></a>
+                          </td>
+                      </tr>
+                  </table>
+              </td>
+          </tr>
+
+      </table>
+
+  </div>
+</body>
+
+</html>
